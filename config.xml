@@ -4,7 +4,7 @@
         id="com.gream.wordchallenge"
         versionCode="10"
         version="1.0.0">
-    <name>Word Challenge</name>
+    <name>WordChallenge</name>
     <preference name="orientation" value="portrait"/>
     <description>
         An app replacement similar to the Scattergories board game!
