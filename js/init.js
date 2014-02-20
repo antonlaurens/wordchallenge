@@ -26,8 +26,7 @@ var Scattergories = window.Scattergories || {};
         FastClick.attach(document.getElementsByClassName('buttons-container')[0]);
     }, false);
 
-    function loaded() {
-        window.myScroll = new iScroll('wrapper');
+    function resizeScroller() {
         var scrollerHeight = window.innerHeight - $('.top').height();
         $('#wrapper').css({
             position: 'fixed',
@@ -37,8 +36,14 @@ var Scattergories = window.Scattergories || {};
             width: '100%'
         });
         window.myScroll.refresh();
-
     }
+
+    function loaded() {
+        window.myScroll = new iScroll('wrapper');
+        resizeScroller();
+    }
+
+    window.addEventListener('resize', resizeScroller);
     document.addEventListener('DOMContentLoaded', loaded, false);
 
     window.requestAnimFrame = (function(){

@@ -1,28 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<widget xmlns   = "http://www.w3.org/ns/widgets"
-        xmlns:gap   = "http://phonegap.com/ns/1.0"
-        id          = "com.gream.wordchallenge"
-        versionCode = "10"
-        version     = "1.0.0" >
-
+<widget xmlns="http://www.w3.org/ns/widgets"
+        xmlns:gap="http://phonegap.com/ns/1.0"
+        id="com.gream.wordchallenge"
+        versionCode="10"
+        version="1.0.0">
     <name>Word Challenge</name>
-
-    <preference name="orientation" value="portrait" />
-
+    <preference name="orientation" value="portrait"/>
     <description>
-        Word Challenge game for you and your friends!
+        An app replacement similar to the Scattergories board game!
     </description>
-
     <author href="https://gream.co.uk/WordChallenge" email="wordchallenge@gream.co.uk">
-        GreAm Ltd.
+        GreAm
     </author>
-    <icon src="icon.png" />
-    <icon src="img/android/drawable-mdpi/ic_launcher.png" gap:platform="android" gap:density="mdpi" />
-    <icon src="img/android/drawable-hdpi/ic_launcher.png" gap:platform="android" gap:density="hdpi" />
-    <icon src="img/android/drawable-xhdpi/ic_launcher.png" gap:platform="android" gap:density="xhdpi" />
-    <icon src="img/android/drawable-xxhdpi/ic_launcher.png" gap:platform="android" gap:density="xxhdpi" />
-    <icon src="img/android/drawable-xxxhdpi/ic_launcher.png" gap:platform="android" gap:density="xxxhdpi" />
-
-
-
+    <icon src="icon.png"/>
+    <icon src="img/android/drawable-mdpi/ic_launcher.png" gap:platform="android" gap:density="mdpi"/>
+    <icon src="img/android/drawable-hdpi/ic_launcher.png" gap:platform="android" gap:density="hdpi"/>
+    <icon src="img/android/drawable-xhdpi/ic_launcher.png" gap:platform="android" gap:density="xhdpi"/>
+    <icon src="img/android/drawable-xxhdpi/ic_launcher.png" gap:platform="android" gap:density="xxhdpi"/>
+    <icon src="img/android/drawable-xxxhdpi/ic_launcher.png" gap:platform="android" gap:density="xxxhdpi"/>
 </widget>
