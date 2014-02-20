@@ -7,6 +7,8 @@
 
     <name>Word Challenge</name>
 
+    <preference name="orientation" value="portrait" />
+
     <description>
         Word Challenge game for you and your friends!
     </description>
@@ -21,6 +23,6 @@
     <icon src="img/android/drawable-xxhdpi/ic_launcher.png" gap:platform="android" gap:density="xxhdpi" />
     <icon src="img/android/drawable-xxxhdpi/ic_launcher.png" gap:platform="android" gap:density="xxxhdpi" />
 
-    <preference name="orienation" value="portrait" />
+
 
 </widget>
