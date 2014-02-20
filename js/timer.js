@@ -1,7 +1,7 @@
 var Scattergories = window.Scattergories || {};
 (function(S) {
 
-	var TIME_IN_MIL_SECONDS = 7000;//3 * 60 * 1000; // 2 minutes
+	var TIME_IN_MIL_SECONDS = 2 * 60 * 1000; // 2 minutes
 
     var alpha = 'ABCDEFGHIJKLMNOPRSTUVWY';
 

@@ -7,7 +7,7 @@
     <name>WordChallenge</name>
     <preference name="orientation" value="portrait"/>
     <description>
-        An app replacement similar to the Scattergories board game!
+        An app replacement for the board game Scattergories!
     </description>
     <author href="https://gream.co.uk/WordChallenge" email="wordchallenge@gream.co.uk">
         GreAm
