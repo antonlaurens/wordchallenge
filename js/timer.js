@@ -1,13 +1,13 @@
 var Scattergories = window.Scattergories || {};
 (function(S) {
 
-	var TIME_IN_MIL_SECONDS = 3 * 60 * 1000; // 2 minutes
+	var TIME_IN_MIL_SECONDS = 7000;//3 * 60 * 1000; // 2 minutes
 
     var alpha = 'ABCDEFGHIJKLMNOPRSTUVWY';
 
-//
-//    var tune = new Audio('audio/alert.mp3');
-//    var alan = new Audio('audio/alan.mp3');
+    var startSound = new Audio('audio/start.mp3');
+    var resetSound = new Audio('audio/reset.mp3');
+    var timeUpSound = new Audio('audio/timeup.mp3');
 	
     S.Timer = {
 	
@@ -59,6 +59,8 @@ var Scattergories = window.Scattergories || {};
         },
 
         onStartButtonClick_: function(e) {
+            resetSound.pause();
+            startSound.play();
             if (this.startButton_.hasClass('green')) {
 
                 // This is the initial start, delay by three secs
@@ -99,6 +101,8 @@ var Scattergories = window.Scattergories || {};
         },
 
         reset: function() {
+            startSound.pause();
+            resetSound.play();
             this.currentTime_ = TIME_IN_MIL_SECONDS;
             this.resetButton_.removeClass('red green black').addClass('grey');
             this.startButton_.addClass('green').removeClass('red grey black').html('Start');
@@ -116,6 +120,14 @@ var Scattergories = window.Scattergories || {};
                 this.startButton_.removeClass('red').addClass('grey');
                 this.resetButton_.removeClass('grey').addClass('black');
 			}
+            if (this.currentTime_ === 5000
+                || this.currentTime_ === 4000
+                || this.currentTime_ === 3000
+                || this.currentTime_ === 2000
+                || this.currentTime_ === 1000
+                || this.currentTime_ === 0) {
+                timeUpSound.play();
+            }
 		},
 
         populateTimer_: function() {
