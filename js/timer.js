@@ -39,8 +39,13 @@ var Scattergories = window.Scattergories || {};
             this.resetButton_ = el.resetButton;
             this.letterContainer_ = el.letterContainer;
 
-            this.startButton_.on('click', _.bind(this.onStartButtonClick_, this));
-            this.resetButton_.on('click', _.bind(this.reset, this));
+            this.startButton_.on('click',  _.bind(function() {
+                _.defer(_.bind(this.onStartButtonClick_, this));
+            }, this));
+
+            this.resetButton_.on('click',  _.bind(function() {
+                _.defer(_.bind(this.reset, this));
+            }, this));
 
 			this.currentTime_ = TIME_IN_MIL_SECONDS;
             this.populateTimer_();

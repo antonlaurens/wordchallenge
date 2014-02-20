@@ -113,7 +113,7 @@ var Scattergories = window.Scattergories || {};
             orderedList += selectedList[0].items.join('</li><li>'); 
             orderedList += "</li></ol>";
             $('.list').html(orderedList);
-
+            window.myScroll.refresh();
         }
 
     };

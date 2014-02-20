@@ -19,6 +19,28 @@ var Scattergories = window.Scattergories || {};
         S.Lists.init($("#list-select-placeholder"));
     }
 
+    //prevent scrolling
+    document.body.addEventListener('touchmove', function(e){ e.preventDefault(); });
+
+    window.addEventListener('load', function() {
+        FastClick.attach(document.getElementsByClassName('buttons-container')[0]);
+    }, false);
+
+    function loaded() {
+        window.myScroll = new iScroll('wrapper');
+        var scrollerHeight = window.innerHeight - $('.top').height();
+        $('#wrapper').css({
+            position: 'fixed',
+            top: $('.top').height() + 10 + 'px',
+            left: '0px',
+            height: scrollerHeight - 10 + 'px',
+            width: '100%'
+        });
+        window.myScroll.refresh();
+
+    }
+    document.addEventListener('DOMContentLoaded', loaded, false);
+
     window.requestAnimFrame = (function(){
         return window.requestAnimationFrame       || 
           window.webkitRequestAnimationFrame || 
