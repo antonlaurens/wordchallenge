@@ -65,6 +65,7 @@ select {
     border: 1px solid #808080;
     color: grey;
     pointer-events: none;
+    background-color: rgba(0,0,0,0.05);
 }
 
 .button.black {
