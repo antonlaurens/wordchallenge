@@ -1,4 +1,4 @@
-var Scattergories = window.Scattergories || {};
+var WordChallenge = window.WordChallenge || {};
 (function(S) {
 
     var lists = [
@@ -118,5 +118,5 @@ var Scattergories = window.Scattergories || {};
 
     };
 
-})(Scattergories);
+})(WordChallenge);
 

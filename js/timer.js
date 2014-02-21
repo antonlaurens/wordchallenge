@@ -1,4 +1,4 @@
-var Scattergories = window.Scattergories || {};
+var WordChallenge = window.WordChallenge || {};
 (function(S) {
 
 	var TIME_IN_MIL_SECONDS = 2 * 60 * 1000; // 2 minutes
@@ -145,6 +145,6 @@ var Scattergories = window.Scattergories || {};
 
 	};
 
-})(Scattergories);
+})(WordChallenge);
 
 

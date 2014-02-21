@@ -1,4 +1,4 @@
-var Scattergories = window.Scattergories || {};
+var WordChallenge = window.WordChallenge || {};
 (function(S) {
 
     if (window.navigator.standalone) {
@@ -57,4 +57,4 @@ var Scattergories = window.Scattergories || {};
           };
 })();
 
-})(Scattergories);
+})(WordChallenge);
