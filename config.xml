@@ -15,6 +15,10 @@
 
     <!-- Icons -->
     <icon src="icon.png"/>
+    <icon src="img/ios/icon.png" gap:platform="ios" width="57" height="57"/>
+    <icon src="img/ios/icon-72.png" gap:platform="ios" width="72" height="72"/>
+    <icon src="img/ios/icon_at_2x.png" gap:platform="ios" width="114" height="114"/>
+    <icon src="img/ios/icon-72_at_2x.png" gap:platform="ios" width="144" height="144"/>
     <icon src="img/android/drawable-mdpi/ic_launcher.png" gap:platform="android" gap:density="mdpi"/>
     <icon src="img/android/drawable-hdpi/ic_launcher.png" gap:platform="android" gap:density="hdpi"/>
     <icon src="img/android/drawable-xhdpi/ic_launcher.png" gap:platform="android" gap:density="xhdpi"/>
@@ -23,16 +27,16 @@
 
 
     <!-- Splash screens -->
-    <gap:splash src="splash.png" />
-    <gap:splash src="img/splash/ios-default.png" gap:platform="ios" width="320" height="480" />
-    <gap:splash src="img/splash/ios-default_at_2x.png" gap:platform="ios" width="640" height="960" />
-    <gap:splash src="img/splash/ios-default_iphone5.png" gap:platform="ios" width="640" height="1136" />
-    <gap:splash src="img/splash/ios-default-portrait.png" gap:platform="ios" width="768" height="1004" />
-    <gap:splash src="img/splash/ios-default-portrait_at_2x.png" gap:platform="ios" width="1536" height="2008" />
+    <gap:splash src="splash.png"/>
+    <gap:splash src="img/splash/ios-default.png" gap:platform="ios" width="320" height="480"/>
+    <gap:splash src="img/splash/ios-default_at_2x.png" gap:platform="ios" width="640" height="960"/>
+    <gap:splash src="img/splash/ios-default_iphone5.png" gap:platform="ios" width="640" height="1136"/>
+    <gap:splash src="img/splash/ios-default-portrait.png" gap:platform="ios" width="768" height="1004"/>
+    <gap:splash src="img/splash/ios-default-portrait_at_2x.png" gap:platform="ios" width="1536" height="2008"/>
 
-    <gap:splash src="img/splash/ios-default.png" gap:platform="android" gap:density="ldpi" />
-    <gap:splash src="img/splash/ios-default.png" gap:platform="android" gap:density="mdpi" />
-    <gap:splash src="img/splash/ios-default_at_2x.png" gap:platform="android" gap:density="hdpi" />
-    <gap:splash src="img/splash/ios-default_at_2x.png" gap:platform="android" gap:density="xhdpi" />
+    <gap:splash src="img/splash/ios-default.png" gap:platform="android" gap:density="ldpi"/>
+    <gap:splash src="img/splash/ios-default.png" gap:platform="android" gap:density="mdpi"/>
+    <gap:splash src="img/splash/ios-default_at_2x.png" gap:platform="android" gap:density="hdpi"/>
+    <gap:splash src="img/splash/ios-default_at_2x.png" gap:platform="android" gap:density="xhdpi"/>
 
 </widget>
