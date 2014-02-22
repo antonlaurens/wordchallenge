@@ -45,21 +45,21 @@ var WordChallenge = window.WordChallenge || {};
             id: 4,
             name: 'List 5',
             items: [
-                "Sandwiches","Items in a catalog","World leaders/Poloticians","School subjects","Excuses for being late","Ice cream flavors","Things that jump/bounce","Television stars","Things in a park","Foriegn cities","Stones/Gems","Musical instruments"
+                "Sandwiches","Items in a catalog","World leaders/ Politicians","School subjects","Excuses for being late","Ice cream flavors","Things that jump/bounce","Television stars","Things in a park","Foreign cities","Stones/Gems","Musical instruments"
             ]
         },
         {
             id: 5,
             name: 'List 6',
             items: [
-                "Nicknames","Things in the sky","Pizza toppings","Colleges/Universities","Fish","Countries","Things that have spots","Historical Figures","Something you're afraid oF","Terms of endearment","Items in this room","Drugs that are abused"
+                "Nicknames","Things in the sky","Pizza toppings","Colleges/Universities","Fish","Countries","Things that have spots","Historical Figures","Something you're afraid of","Terms of endearment","Items in this room","Drugs that are abused"
             ]
         },
         {
             id: 6,
             name: 'List 7',
             items: [
-                "Fictional characters","Menu items","Magazines","Capitals","Kinds of candy","Items you save up to buy","Footware","Something you keep hidden","Items in a suitcase","Things with tails","Sports equiptment","Crimes"
+                "Fictional characters","Menu items","Magazines","Capitals","Kinds of candy","Items you save up to buy","Footwear","Something you keep hidden","Items in a suitcase","Things with tails","Sports equipment","Crimes"
             ]
         },
         {
