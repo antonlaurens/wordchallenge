@@ -39,9 +39,7 @@ select {
 
 .buttons-container {
     background-color: rgba(0,0,0,0.05);
-    border-top: 1px solid rgba(0,0,0,0.1);
     text-align: center;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
 .button {
@@ -97,4 +95,30 @@ and (max-device-width : 1024px)  {
     0% { -webkit-transform: scale(1); }
     50% {  -webkit-transform: scale(1.4); }
     100% {  -webkit-transform: scale(1); }
+}
+
+#help-button{
+    position:fixed;
+    bottom:0;
+    right:0;
+    border:1px solid grey;
+    border-radius:50%;
+    width:20px;
+    height:20px;
+    text-align: center;
+    margin:5px;
+    font-size: smaller;
+    line-height: 20px;
+}
+#pack-selector {
+    padding:10px;
+    background-color:  rgba(0,0,0,0.025);
+
+}
+
+#pack-selector .chevron{
+    position: absolute;
+    display: inline-block;
+    right: 0;
+    margin-right: 10px;
 }
