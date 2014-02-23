@@ -3,7 +3,7 @@ var WordChallenge = window.WordChallenge || {};
 
 	var TIME_IN_MIL_SECONDS = 2 * 60 * 1000; // 2 minutes
 
-    var alpha = 'ABCDEFGHIJKLMNOPRSTUVWY';
+    var alpha = 'ABCDEFGHIJKLMNOPRSTW';
 
     var timeUpSound = new Audio('audio/timeup.mp3');
 
