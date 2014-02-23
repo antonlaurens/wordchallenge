@@ -39,7 +39,9 @@ select {
 
 .buttons-container {
     background-color: rgba(0,0,0,0.05);
+    border-top: 1px solid rgba(0,0,0,0.1);
     text-align: center;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
 .button {
@@ -98,6 +100,7 @@ and (max-device-width : 1024px)  {
 }
 
 #help-button{
+    display: none;
     position:fixed;
     bottom:0;
     right:0;
@@ -111,6 +114,7 @@ and (max-device-width : 1024px)  {
     line-height: 20px;
 }
 #pack-selector {
+    display:none;
     padding:10px;
     background-color:  rgba(0,0,0,0.025);
 
