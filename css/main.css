@@ -1,7 +1,7 @@
 body {
     padding: 0px;
     margin: 0px;
-    font-family: HelveticaNeue-UltraLight, HelveticaNeue-Light, "Helvetica Neue", Arial;
+    font-family: HelveticaNeue-Light, "Helvetica Neue", Arial;
     -webkit-user-select: none;  /* Chrome all / Safari all */
     -moz-user-select: none;     /* Firefox all */
     -ms-user-select: none;
@@ -13,12 +13,18 @@ body {
     font-size: 50px;
 }
 
+.container.timer {
+    font-family: HelveticaNeue-UltraLight;
+}
+
 .container.timer.extra-margin {
     margin-top: 20px;
+
 }
 
 .container.letter {
     font-size: 80px;
+    font-family: HelveticaNeue-UltraLight;
 }
 
 .hr {
@@ -29,6 +35,7 @@ body {
 }
 
 #list-select-placeholder {
+    /*display:none;*/
     width: 80%;
     margin: 10px auto;
 }
@@ -38,10 +45,10 @@ select {
 }
 
 .buttons-container {
-    background-color: rgba(0,0,0,0.05);
-    border-top: 1px solid rgba(0,0,0,0.1);
+    background-color: rgba(0,0,0,0.10);
+    /*border-top: 1px solid rgba(0,0,0,0.1);*/
     text-align: center;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
+    /*border-bottom: 1px solid rgba(0,0,0,0.1);*/
 }
 
 .button {
@@ -104,25 +111,31 @@ and (max-device-width : 1024px)  {
     position:fixed;
     bottom:0;
     right:0;
-    border:1px solid grey;
+    border: 2px solid grey;
     border-radius:50%;
-    width:20px;
-    height:20px;
+    width: 20px;
+    height: 20px;
     text-align: center;
     margin:5px;
     font-size: smaller;
     line-height: 20px;
 }
 #pack-selector {
-    display:none;
-    padding:10px;
-    background-color:  rgba(0,0,0,0.025);
-
+    display: none;
+    padding: 10px;
+    background-color:  rgba(0,0,0,0.05);
 }
 
+#list-select .chevron,
 #pack-selector .chevron{
     position: absolute;
     display: inline-block;
     right: 0;
     margin-right: 10px;
+}
+
+#list-select {
+    display: none;
+    padding:10px;
+    background-color:  rgba(0,0,0,0.025);
 }
