@@ -1,21 +1,21 @@
 var WordChallenge = window.WordChallenge || {};
-(function(S) {
+(function (WC) {
 
-	var TIME_IN_MIL_SECONDS = 2 * 60 * 1000; // 2 minutes
+    var TIME_IN_MIL_SECONDS = 2 * 60 * 1000; // 2 minutes
 
-    var alpha = 'ABCDEFGHIJKLMNOPRSTW';
+    var alpha = WC.I18n.getString(WC.I18n.KEYS.ALPHABET);
 
     var timeUpSound = new Audio('audio/timeup.mp3');
 
-    S.Timer = {
-	
-		element_: null,
+    WC.Timer = {
 
-		startTime_: null,		
-		
-		currentTime_: null,
+        element_: null,
 
-		interval_: null,
+        lastTime_: null,
+
+        currentTime_: null,
+
+        interval_: null,
 
         letterInterval_: null,
 
@@ -25,47 +25,53 @@ var WordChallenge = window.WordChallenge || {};
 
         letterContainer_: null,
 
-        currentLetter_: 0, // Start with A
-	
-		/**
-		* @el {Zepto Object} The element in which to render the countdown timer
-		*/
-		init: function(el) {
-			_.bindAll(this, 'onTick_');
-			this.element_ = el.timer;
+        currentLetter_: 0,
+
+        init: function (el) {
+            _.bindAll(this,
+                'onLetterTick_',
+                'onStartButtonClick_',
+                'clearClasses_',
+                'start',
+                'pause',
+                'reset',
+                'onTick_',
+                'populateTimer_',
+                'populateCurrentLetter_');
+
+            this.element_ = el.timer;
             this.startButton_ = el.startButton;
             this.resetButton_ = el.resetButton;
             this.letterContainer_ = el.letterContainer;
+            this.currentTime_ = TIME_IN_MIL_SECONDS;
 
-            this.startButton_.on('click',  _.bind(function() {
-                _.defer(_.bind(this.onStartButtonClick_, this));
-            }, this));
+            this.startButton_.on('click', this.onStartButtonClick_);
+            this.resetButton_.on('click', this.reset);
 
-            this.resetButton_.on('click',  _.bind(function() {
-                _.defer(_.bind(this.reset, this));
-            }, this));
+            this.startButton_.html(WC.I18n.getString(WC.I18n.KEYS.BUTTON_START));
+            this.resetButton_.html(WC.I18n.getString(WC.I18n.KEYS.BUTTON_RESET));
 
-			this.currentTime_ = TIME_IN_MIL_SECONDS;
             this.populateTimer_();
             this.populateCurrentLetter_();
 
-		},
-
-        onLetterTick_: function() {
-            this.currentLetter_ = Math.floor(Math.random() * alpha.length);
-            window.requestAnimationFrame(_.bind(this.populateCurrentLetter_,this));
         },
 
-        onStartButtonClick_: function(e) {
+        onLetterTick_: function () {
+            this.currentLetter_ = Math.floor(Math.random() * alpha.length);
+            window.requestAnimationFrame(this.populateCurrentLetter_);
+        },
+
+        onStartButtonClick_: function () {
 
             if (this.startButton_.hasClass('green')) {
 
-                // This is the initial start, delay by three secs
-                if (this.currentTime_===TIME_IN_MIL_SECONDS) {
-                    this.startButton_.removeClass('green black red').addClass('grey').html('Stop');
-                    this.resetButton_.removeClass('green black red').addClass('grey');
+                if (this.currentTime_ === TIME_IN_MIL_SECONDS) {
+
+                    this.clearClasses_(this.startButton_).addClass('grey').html(WC.I18n.getString(WC.I18n.KEYS.BUTTON_STOP));
+                    this.clearClasses_(this.resetButton_).addClass('grey');
+
                     this.letterInterval_ = setInterval(_.bind(this.onLetterTick_, this), 50);
-                    setTimeout(_.bind(this.start, this), 1500);
+                    setTimeout(this.start, 1500);
                 }
                 else {
                     this.start();
@@ -75,46 +81,62 @@ var WordChallenge = window.WordChallenge || {};
             else if (this.startButton_.hasClass('red')) {
                 this.pause();
             }
+
         },
 
-		start: function() {
-            this.startButton_.html('Stop').removeClass('green black grey').addClass('red');
+        start: function () {
+            this.clearClasses_(this.startButton_).html(WC.I18n.getString(WC.I18n.KEYS.BUTTON_STOP)).addClass('red');
+
             this.resetButton_.removeClass('black').addClass('grey');
-			if (this.interval_) {
-				clearInterval(this.interval_);
-			}
+
+            if (this.interval_) {
+                clearInterval(this.interval_);
+            }
             if (this.letterInterval_) {
                 this.letterContainer_.addClass('popInAnimation');
 
                 clearInterval(this.letterInterval_);
             }
-			this.interval_ = setInterval(this.onTick_, 10);
-		},
+            this.lastTime_ = new Date().getTime();
+            this.interval_ = setInterval(this.onTick_, 10);
+        },
 
-        pause: function() {
-            this.startButton_.html('Start').removeClass('red').addClass('green');
-            this.resetButton_.removeClass('grey').addClass('black');
+        pause: function () {
+            this.startButton_.html(WC.I18n.getString(WC.I18n.KEYS.BUTTON_CONTINUE)).removeClass('red').addClass('green');
+            this.clearClasses_(this.resetButton_).addClass('black');
             clearInterval(this.interval_);
         },
 
-        reset: function() {
+        reset: function () {
             this.currentTime_ = TIME_IN_MIL_SECONDS;
-            this.resetButton_.removeClass('red green black').addClass('grey');
-            this.startButton_.addClass('green').removeClass('red grey black').html('Start');
+
+            this.clearClasses_(this.resetButton_).addClass('grey');
+            this.clearClasses_(this.startButton_).addClass('green').html(WC.I18n.getString(WC.I18n.KEYS.BUTTON_START));
+
             this.currentLetter_ = 0;
             this.letterContainer_.removeClass('popInAnimation');
             this.populateTimer_();
             this.populateCurrentLetter_();
         },
 
-		onTick_: function() {
-			this.currentTime_ -= 10;
-            window.requestAnimationFrame(_.bind(this.populateTimer_, this));
-			if (this.currentTime_ <= 0) {
+        clearClasses_: function(el) {
+            el.removeClass('red green black grey');
+            return el;
+        },
+
+        onTick_: function () {
+
+            var timeNow = new Date().getTime();
+            var timeDiff = timeNow - this.lastTime_;
+            this.lastTime_ = timeNow;
+
+            this.currentTime_ -= timeDiff;
+            window.requestAnimationFrame(this.populateTimer_);
+            if (this.currentTime_ <= 0) {
                 clearInterval(this.interval_);
-                this.startButton_.removeClass('red').addClass('grey');
-                this.resetButton_.removeClass('grey').addClass('black');
-			}
+                this.clearClasses_(this.startButton_).addClass('grey');
+                this.clearClasses_(this.resetButton_).addClass('black');
+            }
             if (this.currentTime_ === 5000
                 || this.currentTime_ === 4000
                 || this.currentTime_ === 3000
@@ -123,27 +145,20 @@ var WordChallenge = window.WordChallenge || {};
                 || this.currentTime_ === 0) {
                 timeUpSound.play();
             }
-		},
+        },
 
-        populateTimer_: function() {
-            var minutes = Math.floor(this.currentTime_ / 1000 / 60 );
+        populateTimer_: function () {
+            var minutes = Math.floor(this.currentTime_ / 1000 / 60);
             var seconds = Math.floor((this.currentTime_ - (minutes * 60 * 1000)) / 1000);
-            var mils = (this.currentTime_ - (minutes * 60 * 1000) - (seconds * 1000)) / 10;
-            this.element_.text(this.pad_(minutes.toString()) +':' + this.pad_(seconds.toString()) + ':' + this.pad_(mils));
+            var mils = Math.floor((this.currentTime_ - (minutes * 60 * 1000) - (seconds * 1000)) / 10);
+            this.element_.text(WC.Utils.padNumber(minutes, 2) + ':' + WC.Utils.padNumber(seconds, 2) + ':' + WC.Utils.padNumber(mils, 2));
         },
 
-        populateCurrentLetter_: function() {
+        populateCurrentLetter_: function () {
             this.letterContainer_.text(alpha[this.currentLetter_]);
-        },
-
-        pad_: function(toPad) {
-            if (toPad >= 10) {
-                return toPad.toString();
-            }
-            return '0' + toPad.toString();
         }
 
-	};
+    };
 
 })(WordChallenge);
 
