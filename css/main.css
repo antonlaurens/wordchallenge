@@ -21,10 +21,7 @@ body {
 .container.letter {
     font-size: 80px;
     font-family: HelveticaNeue-UltraLight, "Helvetica Neue", Arial, sans-serif;
-}
-
-.container.letter:active {
-    font-family: HelveticaNeue-Light, "Helvetica Neue", Arial, sans-serif;
+    -webkit-user-select: none;
 }
 
 .hr {

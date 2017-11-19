@@ -49,7 +49,7 @@ var WordChallenge = window.WordChallenge || {};
       var scrollerHeight = window.innerHeight - topHeight;
       $('#wrapper').css({
         position: 'fixed',
-        top: topHeight + 10 + 'px',
+        top: topHeight + 30 + 'px',
         left: '0px',
         height: scrollerHeight - 10 + 'px',
         width: '100%'
