@@ -8,7 +8,7 @@ var WordChallenge = window.WordChallenge || {};
 
     init: function() {
 
-      listScroller = new iScroll('wrapper');
+      listScroller = new IScroll('#wrapper');
 
       WC.Timer.init({
         timer: $("#timer"),
