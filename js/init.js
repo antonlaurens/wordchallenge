@@ -24,16 +24,16 @@ var WordChallenge = window.WordChallenge || {};
       this.resizeScroller();
       this.throttle = false;
       this.listenToTrippleClick();
-
+      this.easterEgg = $('#easter-egg');
     },
 
     listenToTrippleClick: function() {
-      document.querySelector('#timer').addEventListener('click', function(evt) {
-        if (!this.throttle && evt.detail === 3) {
-          $('#easter-egg').addClass('element-animation');
+      $('#letter').on('click', function() {
+        if (!this.throttle) {
+          this.easterEgg.addClass('element-animation');
           this.throttle = true;
           setTimeout(function() {
-            $('#easter-egg').removeClass('element-animation');
+            this.easterEgg.removeClass('element-animation');
             this.throttle = false;
           }.bind(this), 2000);
         }
