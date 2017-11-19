@@ -3,7 +3,7 @@
         xmlns:gap="http://phonegap.com/ns/1.0"
         id="com.gream.wordchallenge"
         versionCode="10"
-        version="1.0.0">
+        version="1.0.1">
 
     <name>WordChallenge</name>
     <preference name="orientation" value="portrait"/>
@@ -11,7 +11,7 @@
         An app replacement for the board game Scattergories!
     </description>
     <author href="https://gream.co.uk/WordChallenge" email="wordchallenge@gream.co.uk">
-        GreAm
+        Gream Ltd
     </author>
 
     <!-- Icons -->
