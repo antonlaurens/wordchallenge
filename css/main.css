@@ -1,7 +1,7 @@
 body {
-    padding: 0px;
-    margin: 0px;
-    font-family: HelveticaNeue-Light, "Helvetica Neue", Arial;
+    padding: 0;
+    margin: 0;
+    font-family: HelveticaNeue-Light, "Helvetica Neue", Arial, sans-serif;
     -webkit-user-select: none;  /* Chrome all / Safari all */
     -moz-user-select: none;     /* Firefox all */
     -ms-user-select: none;
@@ -14,17 +14,13 @@ body {
 }
 
 .container.timer {
-    font-family: HelveticaNeue-UltraLight;
-}
-
-.container.timer.extra-margin {
+    font-family: HelveticaNeue-UltraLight, "Helvetica Neue", Arial, sans-serif;
     margin-top: 20px;
-
 }
 
 .container.letter {
     font-size: 80px;
-    font-family: HelveticaNeue-UltraLight;
+    font-family: HelveticaNeue-UltraLight, "Helvetica Neue", Arial, sans-serif;
 }
 
 .hr {
@@ -46,9 +42,7 @@ select {
 
 .buttons-container {
     background-color: rgba(0,0,0,0.10);
-    /*border-top: 1px solid rgba(0,0,0,0.1);*/
     text-align: center;
-    /*border-bottom: 1px solid rgba(0,0,0,0.1);*/
 }
 
 .button {
